@@ -1,0 +1,44 @@
+[
+  {
+    "image_recto": "/src/assets/veste_recto.jpg",
+    "image_verso": "/src/assets/veste_verso.jpg",
+    "title": "veste",
+    "description": "une veste très veste",
+    "price": "80€"
+  },
+  {
+    "image_recto": "/src/assets/veste2_recto.jpg",
+    "image_verso": "/src/assets/veste2_verso.jpg",
+    "title": "veste",
+    "description": "une veste très veste",
+    "price": "140€"
+  },
+  {
+    "image_recto": "/src/assets/veste_recto.jpg",
+    "image_verso": "/src/assets/veste_verso.jpg",
+    "title": "veste",
+    "description": "une veste très veste",
+    "price": "200€"
+  },
+  {
+    "image_recto": "/src/assets/veste2_recto.jpg",
+    "image_verso": "/src/assets/veste2_verso.jpg",
+    "title": "veste",
+    "description": "une veste très veste",
+    "price": "250€"
+  },
+  {
+    "image_recto": "/src/assets/veste_recto.jpg",
+    "image_verso": "/src/assets/veste_verso.jpg",
+    "title": "veste",
+    "description": "une veste très veste",
+    "price": "300€"
+  },
+  {
+    "image_recto": "/src/assets/veste2_recto.jpg",
+    "image_verso": "/src/assets/veste2_verso.jpg",
+    "title": "veste",
+    "description": "une veste très veste",
+    "price": "350€"
+  }
+]
