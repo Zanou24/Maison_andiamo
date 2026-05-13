@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import data from "../../bdd.json";
+const getImage = (img: string) => {
+  return new URL(`../assets/${img}`, import.meta.url).href;
+};
 </script>
 
 <template>
@@ -10,7 +13,7 @@ import data from "../../bdd.json";
         <div class="flipper">
           <!-- RECTO -->
           <a href="#" class="card face recto">
-            <img :src="article.image_recto" :alt="article.title" />
+            <img :src="getImage(article.image_recto)" :alt="article.title" />
             <div class="card-body">
               <h2>{{ article.title }}</h2>
               <!-- <p>{{ article.description }}</p> -->
@@ -19,7 +22,10 @@ import data from "../../bdd.json";
           </a>
           <!-- VERSO -->
           <a href="#" class="card face verso">
-            <img :src="article.image_verso" :alt="article.title + ' - verso'" />
+            <img
+              :src="getImage(article.image_verso)"
+              :alt="article.title + ' - verso'"
+            />
             <div class="card-body">
               <h2>{{ article.title }}</h2>
               <!-- <p>{{ article.description }}</p> -->

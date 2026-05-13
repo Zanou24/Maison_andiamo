@@ -2,6 +2,17 @@
 import { ref } from "vue";
 import ArticleCards from "./components/articleCards.vue";
 import Menu from "./components/menu.vue";
+import ArticleCard from "./components/articleCard.vue";
+import { onMounted } from "vue";
+import { useAuthStore } from "@/stores/auth";
+import LoginModal from "./components/loginModal.vue";
+
+const auth = useAuthStore();
+const showLogin = ref(false);
+
+onMounted(() => {
+  auth.checkSession(); // vérifie si le cookie est encore valide
+});
 
 const isLight = ref(false);
 const menu = ref(false);
@@ -33,14 +44,34 @@ function toggleMenu() {
       <ArticleCards />
     </section>
     <section>section 2</section>
+    <section>
+      <ArticleCard
+        title="title1"
+        image="img1"
+        description="desc1"
+        price="price1"
+      />
+    </section>
+    <div>
+      <h1>Mon site</h1>
+
+      <!-- bouton de connexion discret si non connecté -->
+      <button v-if="!auth.isOwner" @click="showLogin = true">Connexion</button>
+
+      <!-- contrôles d'édition si connecté -->
+      <EditToolbar v-if="auth.isOwner" />
+      <button v-if="auth.isOwner" @click="auth.logout">Se déconnecter</button>
+
+      <LoginModal v-if="showLogin && !auth.isOwner" />
+    </div>
   </main>
   <footer></footer>
 </template>
 
 <style global>
 :root {
-  --header-bg: #2a2b2b;
-  --bg: #0d0d0d;
+  --header-bg: rgb(20 19 19 / 0.8);
+  --bg: rgb(20 19 19 /1);
   --bg_2: #2a2b2b;
   --text: #ffd700;
   --text_2: #b8860b;
